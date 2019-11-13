@@ -2,10 +2,10 @@
 class Database{
   
     // specify your own database credentials
-    private $host = "localhost";
-    private $db_name = "newsportal";
-    private $username = "root";
-    private $password = "";
+    private $host = "sql12.freemysqlhosting.net";
+    private $db_name = "sql12311911";
+    private $username = "sql12311911";
+    private $password = "BW5XtxXrmQ";
     public $conn;
   
     // get the database connection
