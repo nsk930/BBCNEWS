@@ -1,0 +1,298 @@
+/**
+ *  this file will read pecg cookie from partner domain and give call to dfp 
+ */
+ 
+console.log = function(){};
+console.info = function(){};
+/*Google analytics multisite */
+ /* original script -> 
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68176337-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  */
+
+ /*function loadtracking() {
+	 var site_Domain=window.location.host;
+	 console.info("domain name is "+site_Domain);
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68176337-1', 'auto',{'allowLinker': true});
+  ga('require', 'linker');
+  ga('linker:autoLink', [site_Domain] );
+  ga('send', 'pageview');
+} 
+loadtracking(); */
+
+ /* */
+//housing header integration 
+/*var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = "//g1-bidder.adtech.housing.com/inuxu?cb"+Math.random();
+document.getElementsByTagName('head')[0].appendChild(script);
+*/
+/*var ord=Math.random();
+ord=ord*10000000000000000000;
+var validIp=document.createElement('script');
+	validIp.type='text/javascript';
+	validIp.src="//adgebra.co.in/afpf/IpChecker?cache_b="+ord;
+	validIp.async=true;
+document.getElementsByTagName("head")[0].appendChild(validIp);
+*/
+
+var adgsrvrUrl = "";
+
+if(typeof isDfpAppFlag !='undefined' && isDfpAppFlag!=null && isDfpAppFlag==1){
+	adgsrvrUrl = "https://adgebra.co.in";
+}
+else if (window.location.protocol == "https:") {
+	adgsrvrUrl = "https://adgebra.co.in";
+} else {
+	adgsrvrUrl = "http://adgebra.co.in";
+}
+
+
+var prebidscr=document.createElement("script");
+prebidscr.src="https://adgebra.co.in/afph/prebid.js"
+prebidscr.async="true"
+document.head.appendChild(prebidscr);
+//Criteo top step 1 script starts 
+var adg_comscore_flag=false;
+var crtg_nid = '4544';
+var crtg_cookiename = 'adg_crtg_rta';
+var crtg_varname = 'adg_crtg_content';
+
+function crtg_getCookie(c_name){ var i,x,y,ARRCookies=document.cookie.split(";");for(i=0;i<ARRCookies.length;i++){x=ARRCookies[i].substr(0,ARRCookies[i].indexOf("="));y=ARRCookies[i].substr(ARRCookies[i].indexOf("=")+1);x=x.replace(/^\s+|\s+$/g,"");if(x==c_name){return unescape(y);} }return'';}
+var adg_crtg_content = crtg_getCookie(crtg_cookiename);
+var crtg_rnd=Math.floor(Math.random()*99999999999);
+/*(function(){
+var crtg_url=location.protocol+'//rtax.criteo.com/delivery/rta/rta.js?netId='+escape(crtg_nid);
+crtg_url +='&cookieName='+escape(crtg_cookiename);
+crtg_url +='&rnd='+crtg_rnd;
+crtg_url +='&varName=' + escape(crtg_varname);
+var crtg_script=document.createElement('script');crtg_script.type='text/javascript';crtg_script.src=crtg_url;crtg_script.async=true;
+if(document.getElementsByTagName("head").length>0)document.getElementsByTagName("head")[0].appendChild(crtg_script);
+else if(document.getElementsByTagName("body").length>0)document.getElementsByTagName("body")[0].appendChild(crtg_script);
+})();*/	
+//Criteo top step 1 script ends 
+
+
+try{
+if(googletag)
+{
+ var pubads=googletag.pubads();
+  size=1
+
+var header={
+		 callDFP:function callDFP(adg_content,sizeId){
+			 
+	    //console.info("key in headder"+sizeId);
+		pubads.setTargeting(adg_content,sizeId);
+		googletag.pubads().enableSyncRendering();
+		googletag.pubads().enableSingleRequest();
+		googletag.enableServices();
+		     
+		},
+		getAdgCookie:function getAdgCookie(cname) {
+			 var name = cname + "=";
+			 var ca = document.cookie.split(';');
+			 for ( var i = 0; i < ca.length; i++) {
+			  var c = ca[i].trim();
+			  if (c.indexOf(name) == 0)
+			   return c.substring(name.length, c.length);
+			     }
+			 return "";
+			 },
+
+			 getCurrentHrId:function getAdgCurrentDayId() {
+					var date = new Date();
+					var yy=(date.getFullYear()+"").substring(2);
+					var mm=(date.getMonth() + 1);
+					if(mm<10)
+					{mm="0"+mm}
+					var dd=date.getDate();
+					if(dd<10)
+					{dd="0"+dd}		
+					var hh=date.getHours();
+				if(hh<10)
+					{hh="0"+hh}		
+				return parseInt(yy+""+mm+""+dd+""+hh); 
+				},
+
+
+
+        	adg_getURLParam:function adg_getURLParam(name)
+        	        {
+        	            // get query string part of url into its own variable
+        	            var url = document.getElementById('adg_pixel_header_script').src;
+        	     //alert(url);
+        	            var query_string = url.split("?");
+        	            // make array of all name/value pairs in query string
+        	            var params = query_string[1].split("&");
+        	            // loop through the parameters
+        	            var i = 0;
+        	            while (i < params.length) {
+        	                // compare param name against arg passed in
+        	                var param_item = params[i].split("=");
+        	                if (param_item[0] == name) {
+        	                    // if they match, return the value
+        	                    return param_item[1];
+        	                    }
+        	                i++;
+        	            }
+        	            return "";
+        	        },
+        	        headerParam:""
+
+		 
+           };
+ 
+
+
+var PECGCookie=header.getAdgCookie("PECG");
+
+
+if(PECGCookie){
+PECGCookie=JSON.parse(PECGCookie);
+ 
+for(key in PECGCookie)
+	if(key.indexOf('adg')!=-1)
+		//console.log(key);
+		header.callDFP("adgcrt",key);
+ 
+}
+
+
+var targetData=new Array();
+var pbsExp;
+var segmentJson;
+
+var pbsCookie=header.getAdgCookie("PBS");
+if(pbsCookie){
+pbsCookie=pbsCookie.substring(1, pbsCookie.length-1);
+	var pbsjson=JSON.parse(pbsCookie);
+	for(key in pbsjson){
+		if(key>=header.getCurrentHrId()){
+			   pbsExp=key;			
+		      }
+		var segmentsObj=pbsjson[key];
+		segmentJson=JSON.stringify(segmentsObj);
+		if(segmentsObj) 
+		for(key in segmentsObj){
+	var campaigns =segmentsObj[key].split('_');
+		 for(i=0;i<campaigns.length;i++)
+				 {
+			      targetData.push(campaigns[i])
+				 }
+		 
+		
+		  }
+		
+	if(targetData.length>0)
+	
+	 pubads.setTargeting("adgseg",targetData);
+	//console.info("target data sent" +targetData);	
+	}
+}
+
+
+
+header.headerParam="p1="+header.adg_getURLParam("p1")+"&p2="+"&p3=0"+"&p4="+segmentJson+"&p5="+header.getCurrentHrId();
+/*url="http://adgebra.co.in/ade/adelog?"+header.headerParam;
+ loadData(url);
+ 
+ 
+	  function loadData(url){
+	  //console.info("url called");
+		var ajax = {};
+		ajax.x = function() {
+		    if (typeof XMLHttpRequest !== 'undefined') {
+		        return new XMLHttpRequest();  
+		    }
+		    var versions = [
+		        "MSXML2.XmlHttp.5.0",   
+		        "MSXML2.XmlHttp.4.0",  
+		        "MSXML2.XmlHttp.3.0",   
+		        "MSXML2.XmlHttp.2.0",  
+		        "Microsoft.XmlHttp"
+		    ];
+
+		    var xhr;
+		    for(var i = 0; i < versions.length; i++) {  
+		        try {  
+		            xhr = new ActiveXObject(versions[i]);  
+		            break;  
+		        } catch (e) {
+		        }  
+		    }
+		    return xhr;
+		};
+
+		ajax.send = function(url, callback, method, data, sync) {
+		    var x = ajax.x();
+		    x.open(method, url, sync);
+		    x.onreadystatechange = function() {
+		        if (x.readyState == 4 && x.status==200) {
+		        	
+		           //console.info("ade logging successfull");
+		        }
+		    };
+		    if (method == 'POST') {
+		        x.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+		    }
+		    x.send(data)
+		};
+
+		ajax.get = function(url,data, callback, sync) {
+		    var query = [];
+		   /* for (var key in data) {
+		        query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
+		    }*/
+		/*    ajax.send(url, callback, 'GET', null, sync)
+		};
+		//alert(param);
+		var param="";
+		//console.info(pbsExp);
+		if(pbsExp!=null || typeof(pbsExp)!='undefined'){
+			
+			ajax.get(url,param,  function() {});
+			
+		}
+	}*/
+}
+	
+}
+catch(err)
+	{ 
+	console.info("DFP integration is not done");
+	}
+ 
+/*
+ * get image detail json from api
+ * */
+var adg_imagedetails={};
+var xhr = new XMLHttpRequest();
+xhr.open("GET",adgsrvrUrl+"/Adg_Analytics/GetImageDetails?docurl="+window.location.href+"&rand="+Math.floor((Math.random() * 30) + 1), true);
+xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+xhr.onload = function () {
+   // do something to response
+	if(this.responseText=="NA" || this.responseText==""){
+		adg_imagedetails="NA";
+	}else{
+		adg_imagedetails=JSON.parse(this.responseText);
+		if(typeof adg_imagedetails.categoryKeyword==undefined || adg_imagedetails.categoryKeyword=="" || adg_imagedetails.categoryKeyword==null) {
+			adg_imagedetails="NA";
+			}
+	} 
+};
+xhr.send();
+

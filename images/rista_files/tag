@@ -1,0 +1,94 @@
+(function(w, d, s) {
+  try {
+    d = w.top.document || d; w = w.top.document ? w.top : w;
+  } catch (e) {}
+  var ttag = function() {
+    if (window.teadsObj) {
+    for (var key in teadsObj) {
+        teadsObj[key] = [];
+    }
+}
+window.teadsObj = window.teadsObj || {
+    AdLoaded: [],
+    AdStarted: [],
+    AdStopped: [],
+    AdSkipped: [],
+    AdVideoStart: [],
+    AdVideoFirstQuartile: [],
+    AdVideoMidpoint: [],
+    AdVideoThirdQuartile: [],
+    AdVideoComplete: [],
+    AdClickThru: [],
+    AdUserClose: [],
+    AdPaused: [],
+    AdPlaying: [],
+    AdError: [],
+    mute: [],
+    unmute: [],
+    noAd: [],
+    AdRemainingTimeChange: []
+};
+
+function teadsEvent(eventType) {
+    var eventArray = window.teadsObj[eventType];
+    var eventQuant = eventArray.length;
+    for (var i = 0; i < eventQuant; i++) {
+        eventArray[i]();
+    }
+}
+var durationSent = false;
+var playerWrapper = window.document.querySelector(".teads").parentNode.parentNode;
+var playerWrapperHeight = playerWrapper.offsetHeight;
+var playerDivHeight = playerWrapper.children[0].offsetHeight;
+var videoText = playerWrapper.children[1];
+var ratioCheck = playerWrapper.offsetWidth / playerWrapper.offsetHeight;
+if ((ratioCheck > (16 / 9)) && videoText) {
+    var videoTextHeight = videoText.offsetHeight;
+    var teadsPlayerWidth = (playerWrapperHeight - videoTextHeight) * 16 / 9;
+    var _tt_css = "margin: 0px auto; max-width: " + teadsPlayerWidth + "px;";
+} else if (ratioCheck > (16 / 9)) {
+    var teadsPlayerWidth = (playerWrapperHeight) * 16 / 9;
+    var _tt_css = "margin: 0px auto; max-width: " + teadsPlayerWidth + "px;";
+} else if ((ratioCheck < (16 / 9)) && videoText) {
+    var videoTextHeight = videoText.offsetHeight;
+    var teadsPlayerWidth = (playerWrapperHeight - videoTextHeight) * 16 / 9;
+    var _tt_css = "margin: 0px auto; max-width: " + teadsPlayerWidth + "px;";
+    var playerMargin = (playerWrapperHeight - (playerWrapper.offsetWidth / (16 / 9))) / 2;
+    playerWrapper.children[0].setAttribute("style", "margin-top: " + playerMargin + "px;");
+    playerWrapper.style.background = "black";
+} else if (ratioCheck < (16 / 9)) {
+    var teadsPlayerWidth = (playerWrapperHeight) * 16 / 9;
+    var _tt_css = "margin: 0px auto; max-width: " + teadsPlayerWidth + "px;";
+    var playerMargin = (playerWrapperHeight - (playerWrapper.offsetWidth / (16 / 9))) / 2;
+    playerWrapper.children[0].setAttribute("style", "margin-top: " + playerMargin + "px;");
+    playerWrapper.style.background = "black";
+} else {
+    var teadsPlayerWidth = (playerWrapperHeight) * 16 / 9;
+    var teadsHeight = playerWrapper.offsetWidth / (16 / 9);
+    var teadsMarginTop = (playerWrapperHeight - teadsHeight) / 2 + "px";
+    var _tt_css = "margin: " + teadsMarginTop + " auto 0px; max-width: " + teadsPlayerWidth + "px;";
+    playerWrapper.style.background = "black";
+}
+var teadsPlayerWrapper = window.document.querySelector(".teads").parentNode;
+if (teadsPlayerWrapper) {
+    teadsPlayerWrapper.style.background = "black";
+}
+    w.teads.page(96089).placement(104024, {slider: {allow_corner_position: false, allow_top_position: false}, "css":_tt_css,"callbacks":{"AdLoaded":function () {teadsEvent("AdLoaded");},"AdStarted":function () {teadsEvent("AdStarted");},"AdStopped":function () {teadsEvent("AdStopped");},"AdSkipped":function () {teadsEvent("AdSkipped");},"AdVideoStart":function () {teadsEvent("AdVideoStart");
+var teadsPlayers = window.document.querySelectorAll(".teads-player");
+for (var i = 0; i < teadsPlayers.length; i++) {
+    var clickButton = teadsPlayers[i].children[0].contentWindow.document.querySelector(".teads-ui-component-clickbutton");
+    if (clickButton) {
+        clickButton.setAttribute("style", "display: none!important;");
+    }
+}},"AdVideoFirstQuartile":function () {teadsEvent("AdVideoFirstQuartile");},"AdVideoMidpoint":function () {teadsEvent("AdVideoMidpoint");},"AdVideoThirdQuartile":function () {teadsEvent("AdVideoThirdQuartile");},"AdVideoComplete":function () {teadsEvent("AdVideoComplete");},"AdClickThru":function () {teadsEvent("AdClickThru");},"AdPaused":function () {teadsEvent("AdPaused");},"AdPlaying":function () {teadsEvent("AdPlaying");},"AdError":function () {teadsEvent("AdError");},"mute":function () {teadsEvent("mute");},"unmute":function () {teadsEvent("unmute");},"AdRemainingTimeChange":function () {var adDuration = teads.instances.inread[0].adDuration;
+if (!durationSent && adDuration > 0) {
+    teadsEvent("adDuration: " + adDuration);
+}},"AdUserClose":function () {teadsEvent("AdUserClose");}},"format":"inread","slot":{"insertBefore":true,"btf":false,"selector":".teads","minimum":1}}).serve();
+  };
+  if (w.teads && w.teads.page) { ttag(); }
+  else if (!w.teadsscript) {
+    var protocol = w.location.protocol.match(/^https?:$/) ? w.location.protocol : 'https:';
+    s.src = protocol + '//a.teads.tv/media/format/v3/teads-format.min.js';
+    s.async = true; s.onload = ttag; w.teadsscript = d.getElementsByTagName('head')[0].appendChild(s);
+  }
+})(window, document, document.createElement('script'));

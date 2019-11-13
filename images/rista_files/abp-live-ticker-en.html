@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://wcstatic.abplive.in/en/prod/static_html/abp-live-ticker-en.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://wcstatic.abplive.in/prod/front_images/favicon_new.ico" rel="shortcut icon">
+  <title>English WahCricket</title>
+  <script src="./scripts.min.js.download"></script>
+  <link rel="stylesheet" href="./bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./cricket.css">
+  <link rel="stylesheet" href="./owl.carousel.min.css">
+  <link rel="stylesheet" href="./flags.min.css">
+  <script>
+    var cricketTeamMapping = '{"1":{"eng_name":"Australia","eng_name_short":"AUS","hindi_name":"\u0911\u0938\u094d\u091f\u094d\u0930\u0947\u0932\u093f\u092f\u093e","league":"ICC"},"2":{"eng_name":"Bangladesh","eng_name_short":"BAN","hindi_name":"\u092c\u093e\u0902\u0917\u094d\u0932\u093e\u0926\u0947\u0936","league":"ICC"},"3":{"eng_name":"England","eng_name_short":"ENG","hindi_name":"\u0907\u0902\u0917\u094d\u0932\u0948\u0902\u0921","league":"ICC"},"4":{"eng_name":"India","eng_name_short":"IND","hindi_name":"\u092d\u093e\u0930\u0924","league":"ICC"},"5":{"eng_name":"New Zealand","eng_name_short":"NZ","hindi_name":"\u0928\u094d\u092f\u0942\u091c\u0940\u0932\u0948\u0902\u0921","league":"ICC"},"6":{"eng_name":"Pakistan","eng_name_short":"PAK","hindi_name":"\u092a\u093e\u0915\u093f\u0938\u094d\u0924\u093e\u0928","league":"ICC"},"7":{"eng_name":"South Africa","eng_name_short":"SA","hindi_name":"\u0926\u0915\u094d\u0937\u093f\u0923 \u0905\u092b\u094d\u0930\u0940\u0915\u093e","league":"ICC"},"8":{"eng_name":"Sri Lanka","eng_name_short":"SL","hindi_name":"\u0936\u094d\u0930\u0940\u0932\u0902\u0915\u093e","league":"ICC"},"9":{"eng_name":"West Indies","eng_name_short":"WI","hindi_name":"\u0935\u0947\u0938\u094d\u091f \u0907\u0902\u0921\u0940\u091c","league":"ICC"},"10":{"eng_name":"Zimbabwe","eng_name_short":"ZIM","hindi_name":"\u091c\u093f\u092e\u094d\u092c\u093e\u092c\u094d\u0935\u0947","league":"ICC"},"13":{"eng_name":"Ireland","eng_name_short":"IRE","hindi_name":"\u0906\u092f\u0930\u0932\u0948\u0902\u0921","league":"ICC"},"15":{"eng_name":"Netherlands","eng_name_short":"NED","hindi_name":"\u0928\u0940\u0926\u0930\u0932\u0948\u0902\u0921","league":"ICC"},"16":{"eng_name":"Scotland","eng_name_short":"SCO","hindi_name":"\u0938\u094d\u0915\u0949\u091f\u0932\u0948\u0902\u0921","league":"ICC"},"21":{"eng_name":"United Arab Emirates","eng_name_short":"UAE","hindi_name":"\u0938\u0902\u092f\u0941\u0915\u094d\u0924 \u0905\u0930\u092c \u0905\u092e\u0940\u0930\u093e\u0924","league":"ICC"},"22":{"eng_name":"USA","eng_name_short":"USA","hindi_name":"\u092f\u0942. \u090f\u0938. \u090f","league":"ICC"},"28":{"eng_name":"Oman","eng_name_short":"OMA","hindi_name":"\u0913\u092e\u093e\u0928","league":"ICC"},"750":{"eng_name":"Papua New Guinea","eng_name_short":"PNG","hindi_name":"\u092a\u093e\u092a\u0941\u0906 \u0928\u094d\u092f\u0942 \u0917\u093f\u0928\u0940\u0906","league":"ICC"},"1105":{"eng_name":"Royal Challengers Bangalore","eng_name_short":"RCB","hindi_name":"\u0930\u0949\u092f\u0932 \u091a\u0948\u0932\u0947\u0902\u091c\u0930\u094d\u0938 \u092c\u0948\u0902\u0917\u0932\u094b\u0930","league":"IPL"},"1106":{"eng_name":"Kolkata Knight Riders","eng_name_short":"KKR","hindi_name":"\u0915\u094b\u0932\u0915\u093e\u0924\u093e \u0928\u093e\u0907\u091f \u0930\u093e\u0907\u0921\u0930\u094d\u0938","league":"IPL"},"1107":{"eng_name":"Kings XI Punjab","eng_name_short":"KXIP","hindi_name":"\u0915\u093f\u0902\u0917\u094d\u0938 XI \u092a\u0902\u091c\u093e\u092c","league":"IPL"},"1108":{"eng_name":"Chennai Super Kings","eng_name_short":"CSK","hindi_name":"\u091a\u0947\u0928\u094d\u0928\u0908 \u0938\u0941\u092a\u0930 \u0915\u093f\u0902\u0917\u094d\u0938","league":"IPL"},"1109":{"eng_name":"Delhi Capitals","eng_name_short":"DC","hindi_name":"\u0926\u093f\u0932\u094d\u0932\u0940 \u0915\u0948\u092a\u093f\u091f\u0932\u094d\u0938","league":"IPL"},"1110":{"eng_name":"Rajasthan Royals","eng_name_short":"RR","hindi_name":"\u0930\u093e\u091c\u0938\u094d\u0925\u093e\u0928 \u0930\u0949\u092f\u0932\u094d\u0938","league":"IPL"},"1111":{"eng_name":"Mumbai Indians","eng_name_short":"MI","hindi_name":"\u092e\u0941\u0902\u092c\u0908 \u0907\u0902\u0921\u093f\u092f\u0902\u0938","league":"IPL"},"1188":{"eng_name":"Afghanistan","eng_name_short":"AFG","hindi_name":"\u0905\u095e\u095a\u093e\u0928\u093f\u0938\u094d\u0924\u093e\u0928","league":"ICC"},"1379":{"eng_name":"Sunrisers Hyderabad","eng_name_short":"SRH","hindi_name":"\u0938\u0928\u0930\u093e\u0907\u091c\u0930\u094d\u0938 \u0939\u0948\u0926\u0930\u093e\u092c\u093e\u0926","league":"IPL"},"1720":{"eng_name":"Vanuatu","eng_name_short":"VAN","hindi_name":"\u0935\u093e\u0928\u0941\u0905\u0924\u0941","league":"ICC"},"1739":{"eng_name":"Spain","eng_name_short":"ESP","hindi_name":"\u0938\u094d\u092a\u0947\u0928","league":"ICC"},"1763":{"eng_name":"Qatar","eng_name_short":"QAT","hindi_name":"\u0915\u0924\u0930","league":"ICC"},"1767":{"eng_name":"Philippines","eng_name_short":"PHI","hindi_name":"\u092b\u093f\u0932\u0940\u092a\u0940\u0902\u0938","league":"ICC"},"1789":{"eng_name":"Maldives","eng_name_short":"MDV","hindi_name":"\u092e\u093e\u0932\u0926\u0940\u0935","league":"ICC"},"1797":{"eng_name":"Kuwait","eng_name_short":"KWT","hindi_name":"\u0915\u0941\u0935\u0948\u091f","league":"ICC"},"1833":{"eng_name":"Estonia","eng_name_short":"EST","hindi_name":"\u090f\u0938\u094d\u0924\u094b\u0928\u093f\u092f\u093e","league":"ICC"},"1872":{"eng_name":"Bahrain","eng_name_short":"BHR","hindi_name":"\u092c\u0939\u0930\u0940\u0928","league":"ICC"},"1785":{"eng_name":"Malta","eng_name_short":"MLT","hindi_name":"\u092e\u093e\u0932\u094d\u091f\u093e","league":"ICC"},"1870":{"eng_name":"Belgium","eng_name_short":"BEL","hindi_name":"\u092c\u0947\u0932\u094d\u091c\u093f\u092f\u092e","league":"ICC"},"1822":{"eng_name":"Germany","eng_name_short":"GER","hindi_name":"\u091c\u0930\u094d\u092e\u0928\u0940","league":"ICC"},"1783":{"eng_name":"Mexico","eng_name_short":"MEX","hindi_name":"\u092e\u0947\u0915\u094d\u0938\u093f\u0915\u094b","league":"ICC"},"1868":{"eng_name":"Belize","eng_name_short":"BIZ","hindi_name":"\u092c\u0947\u0932\u0940\u091c","league":"ICC"},"1841":{"eng_name":"Costa Rica","eng_name_short":"CRC","hindi_name":"\u0915\u094b\u0938\u094d\u091f\u093e \u0930\u093f\u0915\u093e","league":"ICC"},"1771":{"eng_name":"Panama","eng_name_short":"PAN","hindi_name":"\u092a\u0928\u093e\u092e\u093e","league":"ICC"},"1298":{"eng_name":"Italy","eng_name_short":"ITA","hindi_name":"\u0907\u091f\u0932\u0940","league":"ICC"},"1814":{"eng_name":"Guernsey","eng_name_short":"GGY","hindi_name":"\u0917\u094d\u0935\u0947\u0930\u094d\u0928\u0938\u0947","league":"ICC"},"1481":{"eng_name":"Jersey","eng_name_short":"JER","hindi_name":"\u091c\u0930\u094d\u0938\u0940","league":"ICC"},"1774":{"eng_name":"Norway","eng_name_short":"NOR","hindi_name":"\u0928\u0949\u0930\u094d\u0935\u0947","league":"ICC"},"26":{"eng_name":"Denmark","eng_name_short":"DEN","hindi_name":"\u0921\u0947\u0928\u092e\u093e\u0930\u094d\u0915","league":"ICC"},"1565":{"eng_name":"Singapore","eng_name_short":"SIN","hindi_name":"\u0938\u093f\u0902\u0917\u093e\u092a\u0941\u0930","league":"ICC"},"552":{"eng_name":"Malaysia","eng_name_short":"MAL","hindi_name":"\u092e\u0932\u0947\u0936\u093f\u092f\u093e","league":"ICC"},"637":{"eng_name":"Nepal","eng_name_short":"NEP","hindi_name":"\u0928\u0947\u092a\u093e\u0932","league":"ICC"},"11":{"eng_name":"Bermuda","eng_name_short":"BER","hindi_name":"\u092c\u0930\u092e\u0942\u0921\u093e","league":"ICC"},"151":{"eng_name":"Cayman Islands","eng_name_short":"CAY","hindi_name":"\u0915\u0947\u092e\u0948\u0928 \u0926\u094d\u0935\u0940\u092a","league":"ICC"},"12":{"eng_name":"Canada","eng_name_short":"CAN","hindi_name":"\u0915\u0928\u093e\u0921\u093e","league":"ICC"}}';
+    cricketTeamMapping = JSON.parse(cricketTeamMapping);
+  </script>
+
+  <style>
+    a,a:hover {text-decoration: none;}
+    .flag-o{width: 32px;height: 32px;border-radius: 50%;overflow: hidden;display: flex;align-items: center;justify-content: center;margin-right: 10px;}
+    .flag-o .flag {min-width: 48px;min-height: 48px;}
+    p.nolivematch{text-align:center;color:#ffffff; font-weight: bold; size:12px; width:100%}
+  </style>  
+</head>
+<body>
+  <input type="hidden" name="total_matches" class="total_matches" value="0">
+  <!-- mobile container -->
+  <div class="col-12 p-0 d-flex d-sm-none flex-column justify-content-between crkt-score-container" id="embed_mobile_container" style="width:100% !important"><div class="crkt-title"><div class="ringring"></div><div class="circle"></div>Cricket<span>Score</span></div><div class="owl-carousel crktScore embedresulthtml owl-loaded owl-drag"><p class="nolivematch">No Live Matches</p></div></div>
+  <!-- end mobile container -->
+  
+<!-- Desktop container -->
+<div class="col-12 p-0 d-none d-sm-block" id="embed_desktop_container" style="width:100% !important"><div class="d-flex justify-content-between crkt-score-container"><div class="crkt-title"><div class="ringring"></div><div class="circle"></div>Cricket <span>Score</span></div><div class="owl-carousel crktScore embedresulthtml owl-loaded owl-drag"><p class="nolivematch">No Live Matches</p></div><div class="crkt-powered-by">Powered By<img src="./wahcricket-logo.png" class="loading" data-was-processed="true"></div></div></div>
+<!-- End Desktop container -->
+  
+  <script>
+
+var isMobile = (/iphone|ipod|android|blackberry|bb10|nokia|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+$(document).ready(function(){  
+    get_live_match_embed('yes');
+    var liveMatchTrigger=setInterval(function(){
+      get_live_match_embed('no')
+    }, 15000);
+
+    setTimeout(startcar, 2000);
+
+  });
+
+  function startcar(){
+    $('.owl-carousel.crktScore').owlCarousel({
+      loop: false,
+      margin: 0,
+      nav: true,
+      dots: false,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 1
+        },
+        1000: {
+          items: 1
+        }
+      }
+    });
+  }
+
+  
+
+function get_live_match_embed(firstTime){
+  var calendarEmbed = "https://wcstatic.abplive.in/cricket/live/json/en/calendar_new_liupre.json";
+  $.ajax({
+    url : calendarEmbed,
+    type : 'GET',
+    dataType : 'json',
+    cache	: false,
+    success:function(calendar){
+
+     
+      var allMatches = calendar.data.matches;
+      var allMatchesCount = allMatches.length;
+      var liveMatchCounter=0;
+
+      for(var pr=1; pr < 4; pr++){
+        for(var a=0; a < allMatchesCount; a++){
+
+          if(allMatches[a]['live']==1){
+          //if(allMatches[a]['matchstatus']=='Match Ended'){
+            var liveMatchId=allMatches[a]['matchfile'];
+            var liveMatchP = allMatches[a]['priority'];          
+
+            if(liveMatchP==pr){
+             generate_live_match_embed_html(liveMatchId,firstTime); 
+             liveMatchCounter++;
+              
+            }            
+          }
+        }
+      }
+
+      $(".total_matches").val(liveMatchCounter);
+      if(liveMatchCounter==0){
+        $(".embedresulthtml").html('<p class="nolivematch">No Live Matches</p>');
+        window.parent.postMessage({ height: 0.1 }, "*");
+        //$("#embed_desktop_container").html('');
+      }else{
+        if (isMobile) {
+          window.parent.postMessage({ height: 115 }, "*");
+        } else {
+          window.parent.postMessage({ height: 74 }, "*");
+        }
+        console.log("is mobile:"+isMobile);
+      }
+              
+    },
+    error: function(error){
+      console.log('error in live score widget');				
+    }
+    
+  })
+}
+
+function generate_live_match_embed_html(liveMatchId,firstTime){  
+  var matchJsonPath = 'https://wcstatic.abplive.in/cricket/live/json/en/'+liveMatchId+".json";
+
+  
+  $.ajax({
+    async: false,
+    url : matchJsonPath,
+    type : 'GET',
+    dataType : 'json',
+    crossDomain : true,
+    cache : false,
+    success:function(resultMatchDetails){
+
+        
+      var matchStatus=resultMatchDetails['Matchdetail']['Status'];      
+      var matchResult=resultMatchDetails['Matchdetail']['Result'];
+      var matchEquation=resultMatchDetails['Matchdetail']['Equation'];
+      var matchNumber=resultMatchDetails['Matchdetail']['Match']['Number'];
+      var matchDate=resultMatchDetails['Matchdetail']['Match']['Date'];
+      var MatchFile=resultMatchDetails['Matchdetail']['Match']['Code'];
+      var tourName=resultMatchDetails['Matchdetail']['Series']['Tour_Name'];
+      var seriesName=resultMatchDetails['Matchdetail']['Series']['Name'];
+      var matchType=resultMatchDetails['Matchdetail']['Match']['Type'];
+
+      var dayNo ='';
+      if(matchType=='Test'){
+        dayNo = resultMatchDetails['Matchdetail']['Day'];
+      }
+
+      var homeTeamId = parseInt(resultMatchDetails['Matchdetail']['Team_Home']);
+      var awayTeamId = parseInt(resultMatchDetails['Matchdetail']['Team_Away']);
+      var allInningsList=resultMatchDetails['Innings'];
+      
+
+      var currentActiveTeamId = '';
+      if(typeof allInningsList!='undefined' && allInningsList.length >  0){
+        currentActiveTeamId = allInningsList[allInningsList.length - 1]['Battingteam'];
+      }
+      
+      //console.log("a"+currentActiveTeamId);
+
+      var homeTeamDetails=cricketTeamMapping[homeTeamId];
+      var awayTeamDetails=cricketTeamMapping[awayTeamId];
+      
+
+      var matchBetweenTeam= new Array();
+      matchBetweenTeam[homeTeamId]=homeTeamDetails;
+      matchBetweenTeam[awayTeamId]=awayTeamDetails;
+
+      //console.log(matchBetweenTeam);     
+
+      var teamByPlayOrder=get_f_and_s_team_id_embed(homeTeamId,awayTeamId,allInningsList);
+      //console.log(teamByPlayOrder);
+
+      var firstBattingTeamIdWidget = teamByPlayOrder[0];
+      var secondBattingTeamIdWidet = teamByPlayOrder[1];
+
+      // get inning played by 
+
+      var teamAPlayedCounter = 0;
+      var teamBPlayedCounter = 0;
+
+      for(var inning=0; inning < allInningsList.length; inning++){
+        
+        if(allInningsList[inning]['Battingteam']==firstBattingTeamIdWidget){
+          teamAPlayedCounter++;
+        }
+
+        if(allInningsList[inning]['Battingteam']==secondBattingTeamIdWidet){
+          teamBPlayedCounter++;
+        }
+
+      }
+
+      var tc = 1;
+      // Test team variables
+      var testTeamOneInnCounter=1;
+      var testTeamTwoInnCounter=1;
+      var teamOneFirstInn='';
+      var teamOneSecondInn='';
+      var teamOneLastOvers ='';
+
+      var teamTwoFirstInn ='';
+      var teamTwoSecondInn ='';
+      var teamTwoLastOvers = '';
+      // end test team variables
+
+      var teamAScoreHtml = '';
+      var teamBScoreHtml = '';
+
+      var activeInClass = '';
+      for (var teamIndex in teamByPlayOrder){
+
+        var team_id=teamByPlayOrder[teamIndex];  
+        if(currentActiveTeamId==team_id){
+            activeInClass=' playing';
+        }else{
+            activeInClass='';
+        }
+        battingTeamShortName=matchBetweenTeam[team_id]['eng_name_short'];
+        for(var inning=0; inning < allInningsList.length; inning++){
+            var innTotalRun=allInningsList[inning]['Total'];
+            var innWicket=allInningsList[inning]['Wickets'];
+            var innOvers=allInningsList[inning]['Overs'];
+            var innRunrate=allInningsList[inning]['Runrate'];
+
+            if(allInningsList[inning]['Battingteam']==team_id){
+
+                if(matchType=='Test'){ // start test match check
+
+                    if(tc==1){  // test team A score
+
+                      if(testTeamOneInnCounter == 1 && teamAPlayedCounter==2){
+
+                        teamOneSecondInn = ' & <span class="accented">'+innTotalRun+'/'+innWicket+'</span>';
+                      
+                      }else if(testTeamOneInnCounter == 1 && teamAPlayedCounter==1){
+
+                        teamOneFirstInn = '<li class="crkt-score"><span class="accented">IND</span> '+innTotalRun+'/5';
+                        teamOneLastOvers = '<li class="crkt-overs">60.5 (R/R: 4.18)</li>'; 
+                        
+                      }else if(testTeamOneInnCounter == 2){
+
+                        teamOneFirstInn = '<li class="crkt-score"><span class="accented">IND</span> '+innTotalRun+'/5';
+                        teamOneLastOvers = '<li class="crkt-overs">60.5 (R/R: 4.18)</li>';
+                      }
+                      testTeamOneInnCounter++;
+
+                    }else{ // test team B score
+
+                      if(testTeamTwoInnCounter == 1 && teamBPlayedCounter == 2){
+
+                        teamTwoSecondInn = ' & <span class="accented">620/9</span>';
+
+                      }else if(testTeamTwoInnCounter == 1 && teamBPlayedCounter == 1){
+
+                        teamTwoFirstInn = '<li class="crkt-score"><span class="accented">IND</span> 300/5';
+                        teamTwoLastOvers = '<li class="crkt-overs">60.5 (R/R: 4.18)</li>';
+
+                      }else if(testTeamTwoInnCounter == 2){
+
+                        teamTwoFirstInn = '<li class="crkt-score"><span class="accented">IND</span> 300/5';
+                        teamTwoLastOvers = '<li class="crkt-overs">60.5 (R/R: 4.18)</li>';
+                      }
+
+                      testTeamTwoInnCounter++;                        
+                    }
+                
+                
+                }else{ 
+
+                    if(tc==1){ // first odi, t20 inning
+
+                        teamAScoreHtml='<div class="d-flex crkt-team-score'+activeInClass+'"> <div class="crkt-flag-wrapper ml-auto"> <div class="flag-o"><span class="flag flag-'+battingTeamShortName.toLowerCase()+'"></span></div></div><ul class="list-unstyled crkt-score-details my-auto"> <li class="crkt-score"><span class="accented">'+battingTeamShortName+'</span> '+innTotalRun+'/'+innWicket+' </li><li class="crkt-overs">'+innOvers+' (R/R: '+innRunrate+')</li></ul> </div>';
+                    
+                    }else{  // second odi inning
+                        teamBScoreHtml='<div class="d-flex crkt-team-score'+activeInClass+'"> <div class="crkt-flag-wrapper"> <div class="flag-o"><span class="flag flag-'+battingTeamShortName.toLowerCase()+'"></span></div></div><ul class="list-unstyled crkt-score-details my-auto"> <li class="crkt-score"><span class="accented">'+battingTeamShortName+'</span> '+innTotalRun+'/'+innWicket+'</li><li class="crkt-overs">'+innOvers+' (R/R: '+innRunrate+')</li></ul> </div>';
+                    }
+                    
+                } // end odi, t20
+
+            } // end team id check
+
+        } // end inning for loop
+
+        if(matchType=='Test' && tc==1){
+          
+          teamAScoreHtml='<div class="d-flex crkt-team-score'+activeInClass+'"><div class="crkt-flag-wrapper ml-auto"><div class="flag-o"><span class="flag flag-'+battingTeamShortName.toLowerCase()+'"></span></div></div><ul class="list-unstyled crkt-score-details my-auto"><li class="crkt-score">'+teamOneFirstInn+teamOneSecondInn+'</li>'+teamTwoLastOvers+'</ul></div>'
+          
+        }
+
+        if(matchType=='Test' && tc==2){
+          
+          var teamBScoreHtml = '<div class="d-flex crkt-team-score'+activeInClass+'"><div class="crkt-flag-wrapper"><div class="flag-o"><span class="flag flag-'+battingTeamShortName.toLowerCase()+'"></span></div></div><ul class="list-unstyled crkt-score-details my-auto"><li class="crkt-score">'+teamTwoFirstInn+teamTwoSecondInn+'</li>'+teamTwoLastOvers+'</ul></div>';
+          
+        }
+        tc++;
+
+      } // end foreach
+
+      if(teamBScoreHtml==''){
+        
+        var secondBattingTeamSNameWidet=matchBetweenTeam[secondBattingTeamIdWidet]['eng_name_short'];
+
+        teamBScoreHtml='<div class="d-flex crkt-team-score"> <div class="crkt-flag-wrapper"> <div class="flag-o"><span class="flag flag-'+secondBattingTeamSNameWidet.toLowerCase()+'"></span></div> </div> <ul class="list-unstyled crkt-score-details my-auto"> <li class="crkt-score"><span class="accented">'+secondBattingTeamSNameWidet+'</span> <span class="accented">(Yet to Bat)</span> </li></ul></div>';
+      }
+
+      var teama_slug=cricketTeamMapping[homeTeamId]['eng_name'];
+      //teama_slug = teama_slug.replace(" ", "-");
+      teama_slug = teama_slug.split(' ').join('-');
+      teama_slug = teama_slug.toLowerCase();
+
+      var teamb_slug=cricketTeamMapping[awayTeamId]['eng_name'];
+      //teamb_slug = teamb_slug.replace(" ", "-");
+      teamb_slug = teamb_slug.split(' ').join('-');
+      teamb_slug = teamb_slug.toLowerCase();
+      matchTypeSlug=matchType.toLowerCase();
+
+
+      var liveMatchFullScoreCardLink='https://www.wahcricket.com/en/matches/'+teama_slug+'-vs-'+teamb_slug+'-'+matchTypeSlug+'-scorecard-live-'+liveMatchId+'.html';
+
+      var dayNoString = '';
+      if(dayNo!=''){
+        var dayNoString = ' | Day '+dayNo;
+      }
+
+      if(firstTime=='no'){
+
+        var embedMatchHtml =' <div class="crkt-match-info"> <span class="crkt-info1">'+tourName+', '+matchNumber+' '+matchType+dayNoString+'</span> </div><div class="d-flex crkt-teams"> '+teamAScoreHtml+' '+teamBScoreHtml+' </div>';
+
+        
+        //console.log(".each_match_container_"+liveMatchId);
+        $(".each_match_container_"+liveMatchId).html(embedMatchHtml);
+
+        
+
+      }else{
+        var embedMatchHtml ='<a target="_blank" href="'+liveMatchFullScoreCardLink+'" class="d-flex flex-column crkt-score-wrapper each_match_container_'+liveMatchId+'"> <div class="crkt-match-info"> <span class="crkt-info1">'+tourName+', '+matchNumber+' '+matchType+dayNoString+'</span> </div><div class="d-flex crkt-teams"> '+teamAScoreHtml+' '+teamBScoreHtml+' </div></a>';
+
+        $(".embedresulthtml").append(embedMatchHtml);
+      }
+
+      
+    },
+    error: function(error){
+      console.log('Error in fetching match details.');				
+    }
+  });
+}
+
+function get_f_and_s_team_id_embed(resultPageHomeTeamId,resultPageAwayTeamId,resultPageAllInningsList){
+  var bothTeams= new Array();
+  var firstBattingTeamId='';
+  var secondBattingTeamId='';
+  for(var inning=0; inning < resultPageAllInningsList.length; inning++){
+    if(typeof resultPageAllInningsList[inning]['Battingteam']!='undefined'){
+      
+      if(firstBattingTeamId==''){
+        firstBattingTeamId = resultPageAllInningsList[inning]['Battingteam'];
+      }else{
+        if(secondBattingTeamId==''){
+          secondBattingTeamId = resultPageAllInningsList[inning]['Battingteam'];
+        }
+      }
+    }
+  }
+    if(secondBattingTeamId==''){
+    if(firstBattingTeamId==resultPageHomeTeamId){
+      secondBattingTeamId=resultPageAwayTeamId;
+    }else{
+      secondBattingTeamId=resultPageHomeTeamId;
+    }
+  }
+
+  //var f_t_details = cricketTeamMapping[firstBattingTeamId];
+  //var s_t_details = cricketTeamMapping[secondBattingTeamId];
+
+  bothTeams[0]=firstBattingTeamId;
+  bothTeams[1]=secondBattingTeamId;
+  return bothTeams;
+}
+
+
+
+</script>
+
+
+
+</body></html>
